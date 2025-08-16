@@ -1,0 +1,22 @@
+﻿// JS has switch to the Lower and Upper Case: string.toLowerCase() , string.toUpperCase()
+// These are the remaining cases
+
+// The first letter of the entire text is capitalized
+function firstLetterUp(s){
+  return s.charAt(0).toUpperCase()+s.slice(1);
+};
+
+// The first letter of each line is capitalized
+function stringsUp(s){
+  return s.replace( /^ *./mg, n=>n.toUpperCase() );
+};
+
+// The first letter of each sentence is capitalized
+function sentencesUp(s){
+  return s.replace( /(^ *.)|[.?!] *./mg, n=>n.toUpperCase() );
+};
+
+// The first letter of each word is capitalized
+function wordsUp(s){
+  return s.replace( /\b(\w)(\w*?)\b/mg, (x,y,z)=>y.toUpperCase()+z );
+};
